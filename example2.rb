@@ -4,24 +4,16 @@
 # • Although the name and lightsaber color are unlikely to change, the “side of the force” may certainly change based off their actions! Create a method that allows one to change the jedi’s side of the force.
 class Jedi
   
+  attr_reader :name, :lightsaber_color, :side_of_force
+  attr_writer :side_of_force
+
   def initialize(name, lightsaber_color, side_of_force)
     @name = name
     @lightsaber_color = lightsaber_color
     @side_of_force = side_of_force
   end
 
-  def name
-    @name
-  end
-
-  def lightsaber_color
-    @lightsaber_color
-  end
-
-  def side_of_force
-    @side_of_force
-  end
-
+  #getter method
   def change_side_of_force
     if side_of_force == "dark" || side_of_force == "Dark"
       @side_of_force = "Light"
@@ -32,18 +24,19 @@ class Jedi
     end
   end
 
-  def change_force_to(side_of_force)
-    @side_of_force = side_of_force
-  end
+  #setter method
+  # def side_of_force=(path)
+  #   @side_of_force = path
+  # end
 
 end
 
 luke = Jedi.new("Luke", "Green", "Light")
 
-luke.change_side_of_force
+luke.side_of_force
 puts luke.side_of_force
 
-luke.change_force_to("whatever")
+luke.side_of_force = "whatever"
 puts luke.side_of_force
 
 puts luke.lightsaber_color
