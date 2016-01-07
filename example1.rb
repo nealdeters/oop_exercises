@@ -44,3 +44,4 @@ end
 
 #prints the cars color
 p neals_car.color
+p neals_car.color
